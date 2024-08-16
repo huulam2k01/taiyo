@@ -89,7 +89,7 @@ const Header = () => {
     <Box
       sx={{ width: 250 }}
       role="presentation"
-      onClick={toggleDrawer(false)}
+      // onClick={toggleDrawer(false)}
       onKeyDown={toggleDrawer(false)}
     >
       <List>
@@ -105,7 +105,7 @@ const Header = () => {
         <ListItem component={Link} href="/giang-vien">
           <ListItemText primary="Giảng viên" />
         </ListItem>
-        <Accordion sx={{ boxShadow: "none" }}>
+        <Accordion sx={{ boxShadow: "none" }} onClick={toggleDrawer(true)}>
           <AccordionSummary
             aria-controls={`panelf-content`}
             id={`panel-header`}
@@ -130,7 +130,7 @@ const Header = () => {
         <ListItem>
           <ListItemText primary="Thư Viện" />
         </ListItem>
-        <ListItem component={Link} href="/services">
+        <ListItem>
           <Button
             sx={{
               borderRadius: "20px",
