@@ -1,7 +1,5 @@
 "use client";
-
 import Box from "@mui/material/Box";
-
 const YouTubePlugin = ({ srcPlugin }) => {
   return (
     <Box
@@ -12,6 +10,7 @@ const YouTubePlugin = ({ srcPlugin }) => {
       }}
     >
       <iframe
+        title="YouTube trung tâm ngoại ngữ Taiyo"
         style={{
           position: "absolute",
           top: 0,
@@ -24,8 +23,6 @@ const YouTubePlugin = ({ srcPlugin }) => {
           borderRadius: "8px",
         }}
         src={srcPlugin}
-        // src="https://www.youtube.com/embed/GHh5k4fJC3w?si=773piEi8eWlem2ij"
-        title="YouTube video player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerPolicy="strict-origin-when-cross-origin"
         allowFullScreen

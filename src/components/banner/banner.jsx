@@ -45,7 +45,7 @@ const Banner = ({ hotline }) => {
             marginTop: "20px",
             backgroundColor: "#b80602",
           }}
-          href="/services"
+          href={`tel:${hotline}`}
           variant="contained"
         >
           Hotline: {hotline}
@@ -88,7 +88,7 @@ const Banner = ({ hotline }) => {
             alignSelf: "center",
             margin: "20px 0",
           }}
-          href="/services"
+          href={`tel:${hotline}`}
           variant="contained"
         >
           <Typography

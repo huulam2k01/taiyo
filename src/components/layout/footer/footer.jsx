@@ -18,9 +18,13 @@ const Footer = () => {
         <Container maxWidth="sm">
           <Typography sx={{ color: "white" }} variant="body2" align="center">
             {"Copyright © "}
-            <Link sx={{ color: "white" }} color="inherit" href="">
-              Your Website
-            </Link>{" "}
+            <Link
+              sx={{ color: "white" }}
+              color="inherit"
+              href="http://taiyo.edu.vn/"
+            >
+              taiyo.edu.vn
+            </Link>
             {"."}
           </Typography>
         </Container>

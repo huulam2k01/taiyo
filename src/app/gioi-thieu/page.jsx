@@ -13,6 +13,9 @@ export const metadata = {
     ],
   },
 };
+const currentDate = new Date();
+const currentYear = currentDate.getFullYear();
+
 const title = "TRUNG TÂM NHẬT NGỮ TAIYO";
 const dataPage = [
   {
@@ -69,10 +72,11 @@ const dataPage = [
     content: (
       <>
         <Typography>
-          Được hình thành từ 2019, sau gần 5 năm hoạt động, Trung tâm Tiếng Nhật
-          Taiyo tự hào là trung tâm hàng đầu trong việc đào tạo, luyện thi tiếng
-          Nhật trên địa bàn Hà Nội. Taiyo đã và đang trên đà phát triển, đồng
-          hành cùng học viên trên con đường chinh phục tiếng Nhật.
+          Được hình thành từ 2019, sau gần {`${currentYear - 2019}`} năm hoạt
+          động, Trung tâm Tiếng Nhật Taiyo tự hào là trung tâm hàng đầu trong
+          việc đào tạo, luyện thi tiếng Nhật trên địa bàn Hà Nội. Taiyo đã và
+          đang trên đà phát triển, đồng hành cùng học viên trên con đường chinh
+          phục tiếng Nhật.
         </Typography>
         <Typography>
           Tới nay, Trung tâm Tiếng Nhật Taiyo đã đào tạo hơn xxx học viên, trong

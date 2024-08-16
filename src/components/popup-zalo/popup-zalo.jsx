@@ -61,6 +61,7 @@ const PopUpZalo = ({ hotline }) => {
           <CardMedia
             component="img"
             image={Img.src}
+            alt="zalo trung tâm ngoại ngữ Taiyo"
             sx={{ width: "100%", height: "100%", objectFit: "cover" }}
           />
         </IconButton>

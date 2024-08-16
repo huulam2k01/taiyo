@@ -2,26 +2,26 @@
   position: relative;
   background: #fff;
   width: 24%;
-  height: 25px;
+  height: 36px;
   /* border-radius: 100px; */
   /* box-shadow: 0 0 30px rgba(0, 0, 0, 0.2); */
 }
-
+ 
 .cloud::before,
 .cloud::after {
   content: "";
   position: absolute;
   background: #fff;
-  width: 64%;
-  height: 80px;
+  width: 66%;
+  height: 90px;
   border-radius: 50%;
 }
-
+ 
 .cloud::before {
   top: -42px;
   left: 0px;
 }
-
+ 
 .cloud::after {
   top: -25px;
   right: -20px;
@@ -30,57 +30,57 @@
   position: relative;
   background: #fff;
   width: 24%;
-  height: 25px;
+  height: 36px;
   /* border-radius: 100px; */
   /* box-shadow: 0 0 30px rgba(0, 0, 0, 0.2); */
 }
-
+ 
 .cloud1::before,
 .cloud1::after {
   content: "";
   position: absolute;
   background: #fff;
-  width: 79%;
-  height: 80px;
+  width: 81%;
+  height: 90px;
   border-radius: 50%;
   /* box-shadow: 0 0 30px rgba(0, 0, 0, 0.2); */
 }
-
+ 
 .cloud1::before {
   top: -56px;
   left: -30px;
 }
-
+ 
 .cloud1::after {
   top: -29px;
   right: -52px;
 }
-
+ 
 .cloud2 {
   position: relative;
   background: #fff;
   width: 24%;
-  height: 25px;
+  height: 36px;
   /* border-radius: 100px; */
   /* box-shadow: 0 0 30px rgba(0, 0, 0, 0.2); */
 }
-
+ 
 .cloud2::before,
 .cloud2::after {
   content: "";
   position: absolute;
   background: #fff;
-  width: 63%;
-  height: 126px;
+  width: 65%;
+  height: 136px;
   border-radius: 50%;
   /* box-shadow: 0 0 30px rgba(0, 0, 0, 0.2); */
 }
-
+ 
 .cloud2::before {
   top: -67px;
   left: -30px;
 }
-
+ 
 .cloud2::after {
   top: -29px;
   right: -27px;

@@ -12,6 +12,7 @@ const FacebookPagePlugin = ({ pageUrl }) => {
       }}
     >
       <iframe
+        title="FaceBook trung tâm ngoại ngữ Taiyo"
         src={pageUrl}
         style={{
           position: "absolute",

@@ -1,28 +1,28 @@
 import Banner from "@/components/banner/banner";
-
 import { Container, Grid, Typography } from "@mui/material";
 import Link from "next/link";
-
 import { sanityFetch } from "@/sanity/lib/client";
 import { COURSES_QUERY } from "@/sanity/lib/queries";
 import { urlFor } from "@/sanity/lib/image";
 import getHotline from "@/utils/getHotline";
-
 import logo from "../../public/img/logo-removebg.png";
 import dynamic from "next/dynamic";
-import FacebookPagePlugin from "@/components/plugin-page/facebook-page-plugin";
 const DynamicVerticalCardBox = dynamic(
   () => import("@/components/card-box/vertical-card-box"),
   {
     loading: () => <p>Loading...</p>,
-    // ssr: false,
   }
 );
 const DynamicYTB = dynamic(
   () => import("@/components/youtube/youtube-plugin"),
   {
     loading: () => <p>Loading...</p>,
-    // ssr: false,
+  }
+);
+const DynamicFB = dynamic(
+  () => import("@/components/plugin-page/facebook-page-plugin"),
+  {
+    loading: () => <p>Loading...</p>,
   }
 );
 
@@ -69,7 +69,7 @@ const pageUrlFB =
 
 export default async function Home() {
   const course = await sanityFetch({ query: COURSES_QUERY });
-  //merger Route va course
+
   const dataCard = path.map((p) => {
     const courseItem = course.find((c) => c.name.trim() === p.title.trim());
 
@@ -109,6 +109,7 @@ export default async function Home() {
               sx={{
                 fontSize: { xl: "h5.fontSize", xs: "h6.fontSize" },
                 padding: "2px 10px",
+                marginBottom: "10px",
                 borderBottom: "1px solid #be382d",
               }}
             >
@@ -122,7 +123,7 @@ export default async function Home() {
                 return (
                   <Grid
                     component={Link}
-                    href={`/lien-tuc-mo-lop-hoc/${item.route}`}
+                    href={`/lien-tuc-mo-lop-hoc/${item?.route}`}
                     item
                     xs={12}
                     md={4}
@@ -136,16 +137,33 @@ export default async function Home() {
                   </Grid>
                 );
               })}
-
+          <Grid item xs={12} md={12} display="flex" justifyContent="center">
+            <Typography
+              maxWidth="600px"
+              fontWeight="600"
+              lineHeight="30px"
+              letterSpacing="0.5px"
+              color="#be382d"
+              variant="h5"
+              sx={{
+                fontSize: { xl: "h5.fontSize", xs: "h6.fontSize" },
+                padding: "2px 10px",
+                borderBottom: "1px solid #be382d",
+                marginBottom: "10px",
+              }}
+            >
+              Về chúng tôi
+            </Typography>
+          </Grid>
           <Grid item xs={12} md={6} marginBottom={5}>
             <DynamicYTB
               srcPlugin={
-                "https://www.youtube.com/embed/GHh5k4fJC3w?si=773piEi8eWlem2ij"
+                "https://www.youtube.com/embed/YmscnTAmOXw?si=McOuwXzGFwmenbJQ"
               }
             />
           </Grid>
           <Grid item xs={12} md={6} marginBottom={5}>
-            <FacebookPagePlugin pageUrl={taiyo} />
+            <DynamicFB pageUrl={taiyo} />
           </Grid>
         </Grid>
       </Container>
