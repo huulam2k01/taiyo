@@ -7,6 +7,7 @@ import WallImage from "../../../public/img/Wall_image.jpg";
 import style from "./style.module.css";
 import { sanityFetch } from "@/sanity/lib/client";
 import { CENTER_QUERY } from "@/sanity/lib/queries";
+import Layout from "@/components/layout";
 export const metadata = {
   title: "Liên hệ",
   description: "Liên hệ",
@@ -29,50 +30,52 @@ export default async function LienHe() {
   );
 
   return (
-    <Container maxWidth={"lg"}>
-      <Grid sx={{ flexGrow: 1 }} container spacing={1} pt={5}>
-        <Grid item xs={12} md={12} sx={{ pb: 3 }}>
-          <CardMedia
-            component="img"
-            image={WallImage.src}
-            alt={title}
-            sx={{ width: "100%", height: "100%", objectFit: "cover" }}
-          />
+    <Layout>
+      <Container maxWidth={"lg"}>
+        <Grid sx={{ flexGrow: 1 }} container spacing={1} pt={5}>
+          <Grid item xs={12} md={12} sx={{ pb: 3 }}>
+            <CardMedia
+              component="img"
+              image={WallImage.src}
+              alt={title}
+              sx={{ width: "100%", height: "100%", objectFit: "cover" }}
+            />
+          </Grid>
+          <Grid item xs={12} md={12} sx={{ pb: 3 }}>
+            <h1 className={style.title}>TRUNG TÂM NGOẠI NGỮ TAIYO</h1>
+            <div className={style.slogan}>
+              "Taiyo - Vững vàng như mặt trời tỏa rạng"
+            </div>
+            <div className={style.slogan}>"Tiếng Nhật khó? Có Taiyo!"</div>
+          </Grid>
+          <Grid item xs={12} md={12} sx={{ pb: 3 }}>
+            <div>
+              <CallIcon />
+              <span className={style.content}>
+                HOTLINE : {tel ? tel : emptyInfor}
+              </span>
+            </div>
+            <div className={style.contentDiv}>
+              <MapIcon />
+              <span className={style.content}>
+                ĐỊA CHỈ : {address ? address : emptyInfor}
+              </span>
+            </div>
+            <div className={style.contentDiv}>
+              <LanguageIcon />
+              <span className={style.content}>
+                WEBSITE : http://taiyo.edu.vn/
+              </span>
+            </div>
+            <div className={style.contentDiv}>
+              <EmailIcon />
+              <span className={style.content}>
+                EMAIL : {email ? email : emptyInfor}
+              </span>
+            </div>
+          </Grid>
         </Grid>
-        <Grid item xs={12} md={12} sx={{ pb: 3 }}>
-          <h1 className={style.title}>TRUNG TÂM NGOẠI NGỮ TAIYO</h1>
-          <div className={style.slogan}>
-            "Taiyo - Vững vàng như mặt trời tỏa rạng"
-          </div>
-          <div className={style.slogan}>"Tiếng Nhật khó? Có Taiyo!"</div>
-        </Grid>
-        <Grid item xs={12} md={12} sx={{ pb: 3 }}>
-          <div>
-            <CallIcon />
-            <span className={style.content}>
-              HOTLINE : {tel ? tel : emptyInfor}
-            </span>
-          </div>
-          <div className={style.contentDiv}>
-            <MapIcon />
-            <span className={style.content}>
-              ĐỊA CHỈ : {address ? address : emptyInfor}
-            </span>
-          </div>
-          <div className={style.contentDiv}>
-            <LanguageIcon />
-            <span className={style.content}>
-              WEBSITE : http://taiyo.edu.vn/
-            </span>
-          </div>
-          <div className={style.contentDiv}>
-            <EmailIcon />
-            <span className={style.content}>
-              EMAIL : {email ? email : emptyInfor}
-            </span>
-          </div>
-        </Grid>
-      </Grid>
-    </Container>
+      </Container>
+    </Layout>
   );
 }

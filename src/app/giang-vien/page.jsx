@@ -5,6 +5,7 @@ import { sanityFetch } from "@/sanity/lib/client";
 import { TEACHERS_QUERY } from "@/sanity/lib/queries";
 import { urlFor } from "@/sanity/lib/image";
 import dynamic from "next/dynamic";
+import Layout from "@/components/layout";
 
 export const metadata = {
   title: "Giảng Viên",
@@ -32,28 +33,30 @@ export default async function GiangVien() {
   );
 
   return (
-    <Container>
-      <Typography
-        variant="h3"
-        sx={{ fontSize: { xl: "h3.fontSize", xs: "h4.fontSize" } }}
-        className={style.title}
-      >
-        GIẢNG VIÊN CỦA CHÚNG TÔI
-      </Typography>
-      {!listTeacher.length
-        ? emptyTeacher
-        : listTeacher.map((item, i) => {
-            const url = urlFor(item.image.asset._ref).url();
-            return (
-              <DynamicHorizontalCardBox
-                key={item.name}
-                src={url}
-                name={item.name}
-                content={item.bio}
-                option={i % 2 == 0 ? true : false}
-              />
-            );
-          })}
-    </Container>
+    <Layout>
+      <Container>
+        <Typography
+          variant="h3"
+          sx={{ fontSize: { xl: "h3.fontSize", xs: "h4.fontSize" } }}
+          className={style.title}
+        >
+          GIẢNG VIÊN CỦA CHÚNG TÔI
+        </Typography>
+        {!listTeacher.length
+          ? emptyTeacher
+          : listTeacher.map((item, i) => {
+              const url = urlFor(item.image.asset._ref).url();
+              return (
+                <DynamicHorizontalCardBox
+                  key={item.name}
+                  src={url}
+                  name={item.name}
+                  content={item.bio}
+                  option={i % 2 == 0 ? true : false}
+                />
+              );
+            })}
+      </Container>
+    </Layout>
   );
 }

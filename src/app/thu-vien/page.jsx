@@ -13,6 +13,7 @@ import TiengNhatTreEmDoc from "../../../public/img/lien_tuc_mo_lop_hoc/tiengnhat
 
 import style from "./style.module.css";
 import SmallCardBox from "@/components/card-box/small-card-box";
+import Layout from "@/components/layout";
 export const metadata = {
   title: "Thư viện",
   description: "Thư viện",
@@ -145,16 +146,18 @@ const dataPage = [
 ];
 export default function ThuVien() {
   return (
-    <Container sx={{ paddingTop: "120px" }}>
-      {dataPage.map((item) => (
-        <Grid item xs={12} md={12}>
-          <SmallCardBox
-            title={item.title}
-            content={item.content}
-            key={item.title}
-          />
-        </Grid>
-      ))}
-    </Container>
+    <Layout>
+      <Container sx={{ paddingTop: "120px" }}>
+        {dataPage.map((item) => (
+          <Grid item xs={12} md={12}>
+            <SmallCardBox
+              title={item.title}
+              content={item.content}
+              key={item.title}
+            />
+          </Grid>
+        ))}
+      </Container>
+    </Layout>
   );
 }

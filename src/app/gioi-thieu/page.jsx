@@ -2,6 +2,7 @@ import { CardMedia, Container, Grid, Typography } from "@mui/material";
 import AboutImage from "../../../public/img/aboutImage.jpg";
 import WallImage from "../../../public/img/Wall_image.jpg";
 import SmallCardBox from "@/components/card-box/small-card-box";
+import Layout from "@/components/layout";
 export const metadata = {
   title: "Giới thiệu",
   description: "Giới thiệu",
@@ -166,35 +167,37 @@ const dataPage = [
 ];
 export default function about() {
   return (
-    <Container maxWidth={"lg"}>
-      <Grid container spacing={1} pt={5}>
-        <CardMedia
-          component="img"
-          image={WallImage.src}
-          alt={title}
-          sx={{ width: "100%", height: "100%", objectFit: "cover" }}
-        />
-        <Typography
-          variant="h3"
-          sx={{
-            fontSize: { xl: "h3.fontSize", xs: "h4.fontSize" },
-            color: "#213782",
-            marginTop: "5%",
-            paddingBottom: "5%",
-          }}
-        >
-          TRUNG TÂM NHẬT NGỮ TAIYO
-        </Typography>
-        {dataPage.map((item, i) => (
-          <Grid item xs={12} md={12} key={i}>
-            <SmallCardBox
-              title={item.title}
-              content={item.content}
-              key={item.title}
-            />
-          </Grid>
-        ))}
-      </Grid>
-    </Container>
+    <Layout>
+      <Container maxWidth={"lg"}>
+        <Grid container spacing={1} pt={5}>
+          <CardMedia
+            component="img"
+            image={WallImage.src}
+            alt={title}
+            sx={{ width: "100%", height: "100%", objectFit: "cover" }}
+          />
+          <Typography
+            variant="h3"
+            sx={{
+              fontSize: { xl: "h3.fontSize", xs: "h4.fontSize" },
+              color: "#213782",
+              marginTop: "5%",
+              paddingBottom: "5%",
+            }}
+          >
+            TRUNG TÂM NHẬT NGỮ TAIYO
+          </Typography>
+          {dataPage.map((item, i) => (
+            <Grid item xs={12} md={12} key={i}>
+              <SmallCardBox
+                title={item.title}
+                content={item.content}
+                key={item.title}
+              />
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
+    </Layout>
   );
 }

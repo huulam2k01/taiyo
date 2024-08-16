@@ -1,6 +1,7 @@
 import Banner from "@/components/banner/banner";
 import { Container, Grid, Typography } from "@mui/material";
 import Link from "next/link";
+import Layout from "@/components/layout";
 import { sanityFetch } from "@/sanity/lib/client";
 import { COURSES_QUERY } from "@/sanity/lib/queries";
 import { urlFor } from "@/sanity/lib/image";
@@ -87,7 +88,7 @@ export default async function Home() {
 
   const hotline = await getHotline();
   return (
-    <>
+    <Layout>
       <Banner hotline={hotline} />
       <Container maxWidth={"lg"}>
         <Grid
@@ -167,6 +168,6 @@ export default async function Home() {
           </Grid>
         </Grid>
       </Container>
-    </>
+    </Layout>
   );
 }

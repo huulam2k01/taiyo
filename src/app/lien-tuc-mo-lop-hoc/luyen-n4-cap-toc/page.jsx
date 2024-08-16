@@ -4,6 +4,7 @@ import Img1 from "../../../../public/img/lien_tuc_mo_lop_hoc/n4captoc/n4Docs1.pn
 import Img2 from "../../../../public/img/lien_tuc_mo_lop_hoc/n4captoc/n4Docs2.png";
 import SmallCardBox from "@/components/card-box/small-card-box";
 import Image from "next/image";
+import Layout from "@/components/layout";
 export const metadata = {
   title: "Luyện N4 cấp tốc",
   description: "Luyện N4 cấp tốc",
@@ -53,22 +54,24 @@ const dataPage = [
 ];
 export default function N4CapToc() {
   return (
-    <Container>
-      <Grid container spacing={1} pt={5}>
-        <Grid item xs={12} md={12} mb={5} className={style.title}>
-          <h1>KHÓA HỌC LUYỆN N4 CẤP TỐC</h1>
-        </Grid>
-
-        {dataPage.map((item) => (
-          <Grid item xs={12} md={12} key={item.title}>
-            <SmallCardBox
-              title={item.title}
-              content={item.content}
-              key={item.title}
-            />
+    <Layout>
+      <Container>
+        <Grid container spacing={1} pt={5}>
+          <Grid item xs={12} md={12} mb={5} className={style.title}>
+            <h1>KHÓA HỌC LUYỆN N4 CẤP TỐC</h1>
           </Grid>
-        ))}
-      </Grid>
-    </Container>
+
+          {dataPage.map((item) => (
+            <Grid item xs={12} md={12} key={item.title}>
+              <SmallCardBox
+                title={item.title}
+                content={item.content}
+                key={item.title}
+              />
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
+    </Layout>
   );
 }
